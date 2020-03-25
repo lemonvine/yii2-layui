@@ -1,0 +1,23 @@
+{
+	"name": "lemonvine/yii2-layui",
+	"description": "lemon yii2 layui",
+	"type" : "template",
+	"license": "MIT",
+	"minimum-stability": "dev",
+	"keywords": [
+		"lemon"
+	],
+	"authors": [{
+			"name": "LemonWine",
+			"email": "sdd8002@163.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii2": "2.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"lemonui\\": ""
+		}
+	}
+}
