@@ -1,6 +1,6 @@
 <?php
 
-namespace lemon\assets;
+namespace melon\assets;
 
 use Yii;
 use yii\web\AssetBundle;
@@ -19,9 +19,13 @@ class AppAsset extends AssetBundle
 		$postfix = YII_DEBUG ? '' : '.min';
 		$version = Yii::$app->params['admin_version'];
 		
-		$this->js[] = "layui/layui{$postfix}.js?v=v{$version}";
-		
 		$this->css[] = "layui/css/layui{$postfix}.css?v=v{$version}";
+		$this->css[] = "layui/css/layuimini{$postfix}.css?v=v{$version}";
+		$this->css[] = "layui/css/public{$postfix}.css?v=v{$version}";
+		$this->css[] = "awesome/css/font-awesome{$postfix}.css?v=v{$version}";
+		
+		$this->js[] = "layui/layui{$postfix}.js?v=v{$version}";
+		$this->js[] = "layui/lay/config{$postfix}.js?v=v{$version}";
 		
 		parent::init();
 	}
