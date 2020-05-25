@@ -1,11 +1,13 @@
 <?php
 use yii\helpers\Html;
 use melon\assets\AppAsset;
+use melon\web\Breadcrumbs;
+use melon\web\Menu;
+use melon\repository\Undefinitive;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-//$this->registerAssetBundle(Yii::$app->params['classname_asset']);
 $this->registerAssetBundle(AppAsset::className());
 
 ?>
@@ -23,10 +25,9 @@ $this->registerAssetBundle(AppAsset::className());
 	</head>
 	<body class="layui-layout-body layuimini-all">
 <?php $this->beginBody() ?>
-
 		<div class="layui-layout layui-layout-admin">
 			<div class="layui-header header">
-				<div class="layui-logo"><a href=""><img src="/images/logo.png" alt="logo"><h1>LAYUI MINI</h1></a></div>
+				<div class="layui-logo"><a href=""><img src="/images/logo.png" alt="logo" style="width: 50px;"><h1>LAYUI MINI</h1></a></div>
 				<a><div class="layuimini-tool"><i title="展开" class="fa fa-outdent" data-side-fold="1"></i></div></a>
 
 				<ul class="layui-nav layui-layout-left layui-header-menu layui-header-pc-menu mobile layui-hide-xs">
@@ -70,17 +71,30 @@ $this->registerAssetBundle(AppAsset::className());
 
 			<div class="layui-side layui-bg-black">
 				<div class="layui-side-scroll layui-left-menu">
+					<?=Undefinitive::adminMenus(YII_DEBUG)?>
 				</div>
 			</div>
 			
 			<div class="layui-body">
-				<div class="layui-card layuimini-page-header layui-hide-xs layui-hide">
-					<div class="layui-breadcrumb" id="layuimini-page-header">
-						<a><cite>菜单管理</cite></a>
+				<div class="layui-card layuimini-page-header layui-hide-xs">
+					<?=Breadcrumbs::widget(['links' => $this->breadcrumbs, 'navOptions'=>['class'=>'right']]) ?>
+					
+				</div>
+				
+				
+				
+				
+				<div class="layuimini-content-page">
+					<div class="layuimini-container layui-anim layui-anim-upbit">
+						<div class="layuimini-main">
+							<?=$content?>
+						</div>
 					</div>
 				</div>
-				<div class="layuimini-content-page">
-				</div>
+				
+				
+				
+				
 			</div>
 		</div>
 		
@@ -88,13 +102,7 @@ $this->registerAssetBundle(AppAsset::className());
 		
 	<?php 
 $js = <<<JS
-/*
-layui.use(['layer', 'form'], function(){
-	var layer = layui.layer,form = layui.form;
-	layer.msg('Hello World');
-});
-*/
- layui.use(['element', 'layer', 'layuimini'], function () {
+	layui.use(['element', 'layer', 'form', 'layuimini'], function () {
 		var $ = layui.jquery,
 			element = layui.element,
 			layer = layui.layer,
@@ -119,6 +127,9 @@ $this->registerJs($js);
 		
 		
 		
+<script type="text/javascript">
+</script>
 	</body>
+	
 </html>
 <?php $this->endPage() ?>
