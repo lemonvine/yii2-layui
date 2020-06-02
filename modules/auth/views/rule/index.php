@@ -2,7 +2,7 @@
 
 use yii\helpers\Url;
 use yii\helpers\Html;
-use yii\grid\GridView;
+use melon\web\GridView;
 use melon\widgets\SearchForm;
 use backend\modules\auth\models\AuthRule;
 use common\widgets\ButtonGroup;
@@ -17,26 +17,120 @@ $this->params['breadcrumbs'][] = $this->title;
 $parents = AuthRule::menuIndex();
 $parents[0]='主页面';
 
-
 ?>
-
-
 
 <?php $form = SearchForm::begin();?>
 	<?=$form->field($searchModel, 'menu_name');?>
 	<?=$form->field($searchModel, 'parent_id')->dropDownList((new AuthRule())->getOptions(),['prompt'=>'全部']) ?>
 <?php  SearchForm::end(); ?>
 
-<?php /*= GridView::widget([
+
+
+<table class="layui-table" lay-data="{page:{count: 50, limit: 5}, id:'test'}"  lay-filter="demo">
+  <thead>
+    <tr>
+      <th lay-data="{field:'username', width:100}">昵称</th>
+      <th lay-data="{field:'experience', width:80, sort:true}">积分</th>
+      <th lay-data="{field:'sign'}">签名</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td>贤心1</td>
+      <td>66</td>
+      <td>人生就像是一场修行a</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+    <tr>
+      <td>贤心2</td>
+      <td>88</td>
+      <td>人生就像是一场修行b</td>
+    </tr>
+    <tr>
+      <td>贤心3</td>
+      <td>33</td>
+      <td>人生就像是一场修行c</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+<script type="text/html" id="toolbarDemo">
+	<div class="layui-btn-container">
+		<button class="layui-btn layui-btn-sm data-add-btn"> 添加 </button>
+		<button class="layui-btn layui-btn-sm layui-btn-danger data-delete-btn"> 删除用户 </button>
+	</div>
+</script>
+
+<script type="text/html" id="currentTableBar">
+	<a class="layui-btn layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
+	<a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
+</script>
+
+
+<?= GridView::widget([
 	'dataProvider' => $dataProvider,
 	'pager' => ['class'=>'yii\bootstrap4\LinkPager'],
-	'tableOptions' => ['class' => 'table table-striped table-bordered table-head-fixed'],
 	'columns' => [
 		['attribute' => 'parent_id','format'=>'raw', 'value'=> function($model) use($parents){
 			return $parents[$model->parent_id];
 		}],
 		'menu_name',
-		['attribute' => 'is_display', 'format'=> ['pattern', 'display']],
+		['attribute' => 'is_display', 'sort'=>true, 'format'=> ['pattern', 'display']],
 		'sort_number',
 		'uri_path',
 		['class' => 'yii\grid\ActionColumn',
@@ -61,4 +155,4 @@ $parents[0]='主页面';
 			]
 		],
 	],
-]); */?>
+]); ?>

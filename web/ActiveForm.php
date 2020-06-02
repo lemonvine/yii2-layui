@@ -1,9 +1,4 @@
 <?php
-/**
- * @link http://www.yiiframework.com/
- * @copyright Copyright (c) 2008 Yii Software LLC
- * @license http://www.yiiframework.com/license/
- */
 
 namespace melon\web;
 
@@ -81,6 +76,8 @@ class ActiveForm extends \yii\widgets\ActiveForm
 		}else{
 			$this->options['class'] = 'layui-form';
 		}
+		$view = $this->getView();
+		$view->layuis[]='form';
 	}
 
 	/**
@@ -90,5 +87,18 @@ class ActiveForm extends \yii\widgets\ActiveForm
 	public function field($model, $attribute, $options = [])
 	{
 		return parent::field($model, $attribute, $options);
+	}
+	
+	
+	
+	/**
+	 * This registers the necessary JavaScript code.
+	 * @since 2.0.12
+	 */
+	public function registerClientScript()
+	{
+		parent::registerClientScript();
+		//$view = $this->getView();
+		//$view->registerJs("console.log(123);");
 	}
 }

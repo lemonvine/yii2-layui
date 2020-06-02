@@ -100,33 +100,6 @@ $this->registerAssetBundle(AppAsset::className());
 		
 <?php $this->endBody() ?>
 		
-	<?php 
-$js = <<<JS
-	layui.use(['element', 'layer', 'form', 'layuimini'], function () {
-		var $ = layui.jquery,
-			element = layui.element,
-			layer = layui.layer,
-			layuimini = layui.layuimini;
-
-		//layuimini.init('api/init.json');
-
-		$('.login-out').on("click", function () {
-			layer.msg('退出登录成功', function () {
-				window.location = '/page/login-1.html';
-			});
-		});
-
-		layuimini.listen();
-
-	});
-JS;
-$this->registerJs($js);
-
-?>	
-		
-		
-		
-		
 <script type="text/javascript">
 </script>
 	</body>

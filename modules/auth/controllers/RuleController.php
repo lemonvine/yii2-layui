@@ -6,6 +6,7 @@ use Yii;
 use backend\controllers\AdminController;
 use backend\modules\auth\models\AuthRuleQuery;
 use backend\modules\auth\models\AuthRule;
+use yii\helpers\Json;
 
 /**
  * 后台菜单管理
@@ -107,6 +108,18 @@ class RuleController extends AdminController
 		$model->is_display = $model->is_display == 1 ? 0:1;
 		$model->save(false);
 		return $this->redirect($this->referer);
+	}
+	
+	public function actionData(){
+		$data = AuthRule::find()->all();
+		$result =[
+			"code"=> 0,
+			"msg"=> "",
+			"count"=> 1000,
+			"data"=> $data
+		];
+		
+		return Json::encode($result);
 	}
 
 	/**

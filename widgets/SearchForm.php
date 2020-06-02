@@ -12,7 +12,8 @@ class SearchForm extends ActiveForm
 	public $options = ['class'=>'form-search'];
 	public $fieldConfig=[
 		'template'=>'{label}<div class="layui-input-inline">{input}</div>',
-		'options' => ['class' => 'layui-form-item layui-col-lg3 layui-col-md4 layui-col-sm4 layui-col-xs6'],
+		//'options' => ['class' => 'layui-form-item layui-inline layui-col-lg3 layui-col-md4 layui-col-sm4 layui-col-xs6'],
+		'options' => ['class' => 'layui-inline '],
 	];
 	
 	
@@ -24,15 +25,17 @@ class SearchForm extends ActiveForm
 		}
 		
 		$content = ob_get_clean();
-		$html = Html::beginForm($this->action, $this->method, $this->options);
+		//$html = Html::beginForm($this->action, $this->method, $this->options);
 		//$html .= $content;
+		$html='';
 		$html .= $this->render('search', ['content'=>$content]);
 		
 		if ($this->enableClientScript) {
 			$this->registerClientScript();
 		}
 		
-		$html .= Html::endForm();
+		//$html .= Html::endForm();
+		
 		return $html;
 	}
 }
