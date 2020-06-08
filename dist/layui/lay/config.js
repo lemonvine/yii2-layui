@@ -11,7 +11,8 @@ window.rootPath = (function (src) {
 
 layui.config({
 	base: rootPath + "modules/",
-	version: true
+	version: true,
+	v: "1.0.1"
 }).extend({
 	layuimini: "layuimini/layuimini", // layuimini扩展
 	step: 'step-lay/step', // 分步表单扩展

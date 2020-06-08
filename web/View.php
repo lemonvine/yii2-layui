@@ -61,7 +61,9 @@ class View extends \yii\web\View
 					$modules .= "{$seprate}'{$layui}'";
 					$vars .= "{$seprate}{$layui}=layui.{$layui}";
 				}
-				$js = "layui.use([$modules], function(){
+				$js = "
+
+layui.use([$modules], function(){
 					$vars;
 					".implode("\n", $this->js[self::POS_READY])."
 				
