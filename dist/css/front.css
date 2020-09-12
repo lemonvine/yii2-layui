@@ -1,0 +1,245 @@
+html,
+body {
+	height: 100%;
+}
+
+.img-circle {
+	border-radius: 50%;
+}
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+	border: 1px solid #ebebeb;
+	padding: 0 20px;
+	max-width: 100%;
+	background-color: transparent;
+	font-size: 14px;
+	color: #999;
+	height: 40px;
+	line-height: 40px;
+	border-radius: 4px
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+select:focus {
+	outline: 0
+}
+
+:focus {
+	outline: none!important
+}
+.display-table{
+	display: table;
+	width: 100%;
+	position: relative
+}
+.display-table>*{
+	display: table-cell;
+}
+
+a:hover {
+	color:#e52e06!important;
+}
+
+.header-top {
+	background-color:#f3f3f3;
+	border-top:3px solid #e52e06
+}
+.main-header{
+	padding: 0;
+}
+.header-top a {
+	line-height: 2.1rem;	
+}
+.header-top a:not(:hover) {
+	color:#666;
+}
+.header-top img {
+	height: auto;
+	width: 2rem;
+}
+.header-logo img{
+	height: 50px;
+}
+
+.header .header-middle {
+	padding: 35px 0
+}
+.header-search input{
+	width: 80%;
+	height: 50px;
+	min-width: 300px;
+}
+.header-search button{
+	width: 50px;
+	height: 50px;
+	margin-left: -5px;
+}
+.header-control{
+	width: 80px;
+	text-align: right;
+	padding: auto;
+}
+.cart-icon {
+	display: block;
+	font-size: 30px!important;
+	line-height: 30px;
+	position: relative;
+}
+.cart-count {
+	position: absolute;
+	top: 0;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	border-radius: 50%;
+	background-color: #e52e06;
+	font-size: 12px;
+	color: #fff;
+}
+.header-navbar{
+	margin-bottom: 8px;
+}
+.navbar-vertical {
+	position: relative;
+	width: 320px;
+}
+.navbar-title {
+	color: #fff;
+	position: relative;
+	max-width: 320px;
+	border-radius: 4px;
+	background-color: #e52e06;
+}
+.navbar-title-text {
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: .5em;
+	height: 60px;
+	width: 100%;
+	line-height: 60px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 0px;
+}
+
+.navbar-vertical>input:checked~.navbar-content{
+	display: block;
+}
+.navbar-content {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	max-width: 320px;
+	background-color: #fff;
+	-webkit-transition: opacity .4s ease;
+	-moz-transition: opacity .4s ease;
+	-o-transition: opacity .4s ease;
+	transition: opacity .4s ease;
+	text-align: left;
+	z-index: 99;
+	border: 2px solid #e52e06;
+	border-top: 0;
+	margin-top: -2px;
+	display: none;
+}
+
+.navbar-content li{
+	position: relative;
+}
+.navbar-content li a {
+	color:#666;	
+	font-size: 15px;
+	display: block;
+	padding: 10px 20px 8px 40px;
+	line-height: 33px;
+	letter-spacing:3px;
+}
+.nav-item .icon{
+	margin-top: 2px;
+	margin-right: 10px;
+	font-size: 16px;
+	vertical-align: middle;
+	position: relative;
+}
+
+.navbar-content>.nav-item:not(:first-child)>a {
+	border-top: 1px solid #f1f1f1;
+}
+.navbar-horizontal{
+	padding-left: 35px;
+}
+.navbar-horizontal li a{
+	color: #000;
+	min-width: 80px;
+}
+
+@media(max-width:1499px) {
+	.navbar-vertical {
+		width: 305px
+	}
+}
+
+@media(max-width:1280px) {
+	.navbar-vertical {
+		width: 285px
+	}
+}
+.footer{
+	color: #666;
+	background: #f4f4f4;
+	bottom: 0px;
+	width: 100%;
+}
+.footer p, .footer a, .footer li {
+	color:#666;	
+	font-size: 10.5pt;
+}
+.footer-helper{
+	padding-top: 55px;
+	padding-bottom: 55px;
+}
+.footer-copyright{
+	padding-top: 16px;
+	padding-bottom: 0px;
+	border-top: 1px solid #ebebeb;
+}
+a.backtotop {
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	background-color: #e52e06;
+	position: fixed;
+	bottom: 65px;
+	right: 25px;
+	text-align: center;
+	-webkit-transition: all .4s ease 0s;
+	-moz-transition: all .4s ease 0s;
+	-o-transition: all .4s ease 0s;
+	transition: all .4s ease 0s;
+	z-index: 999;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+
+.carousel-item img{
+	width: 100%;
+}

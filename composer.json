@@ -1,23 +1,24 @@
 {
-	"name": "lemonvine/yii2-layui",
-	"description": "lemon yii2 layui",
+	"name" : "lemonvine/yii2-layui",
+	"description" : "lemon yii2 layui",
 	"type" : "template",
-	"license": "MIT",
-	"minimum-stability": "dev",
-	"keywords": [
+	"license" : "MIT",
+	"minimum-stability" : "dev",
+	"keywords" : [
 		"lemon"
 	],
-	"authors": [{
-			"name": "LemonWine",
-			"email": "sdd8002@163.com"
+	"authors" : [{
+			"name" : "LemonWine",
+			"email" : "sdd8002@163.com"
 		}
 	],
-	"require": {
-		"yiisoft/yii2": "2.*"
+	"require" : {
+		"yiisoft/yii2" : "2.*",
+		"yiisoft/yii2-bootstrap4" : "~2.0.6"
 	},
-	"autoload": {
-		"psr-4": {
-			"melon\\": ""
+	"autoload" : {
+		"psr-4" : {
+			"melon\\" : ""
 		}
 	}
 }
